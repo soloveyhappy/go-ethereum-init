@@ -1,0 +1,16 @@
+geth --identity “LocalTestNode” --ipcpath ~/mychain/geth.ipc --rpc --rpcaddr "0.0.0.0" --rpcport 8545 --rpccorsdomain “*” --datadir ~/mychain/data/ --port 30303 --nodiscover --rpcapi admin,ssh,miner,txtool,db,eth,net,web3,personal --networkid 1999 --nat=none --syncmode=fast --maxpeers 0 init ~/mychain/my_genesis.json console
+
+geth --identity “LocalTestNode” --ipcpath ~/mychain/geth.ipc --rpc --rpcaddr "0.0.0.0" --rpcport 8545 --rpccorsdomain “*” --datadir ~/mychain/data/ --port 30303 --nodiscover --rpcapi admin,ssh,miner,txtool,db,eth,net,web3,personal --networkid 1999 --nat=none --syncmode=fast --maxpeers 0 console
+
+geth --identity “LocalTestNode” --ipcpath ~/mychain/geth.ipc --datadir ~/mychain/data/ --networkid 1999 --nat=none --syncmode=fast init ~/mychain/my_genesis.json
+
+
+
+
+#----------------
+
+geth --datadir ~/mychain/data --networkid 15 init my_genesis.json
+
+geth --identity "solonode" --rpc --rpcport "8545" --rpcaddr "127.0.0.1" --rpccorsdomain "*" --datadir mychain/data --nodiscover --nat "any" --port "30303" --rpcapi "personal,db,eth,net,web3" --networkid 15 console
+
+geth attach ~/mychain/data/geth.ipc
